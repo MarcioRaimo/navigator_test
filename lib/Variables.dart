@@ -8,8 +8,4 @@ class Variables {
     getIt = GetIt.instance;
     getIt.registerSingleton<MyRouterState>(MyRouterState());
   }
-
-  static Future<void> future() {
-    return Future.delayed(Duration(seconds: 2));
-  }
 }

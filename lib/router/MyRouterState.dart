@@ -21,7 +21,7 @@ class MyRouterState extends ChangeNotifier {
 
   @override
   String toString() {
-    return "isOne: $isOne \t isTwo: $isTwo \t isThree: $isThree";
+    return "isOne: $isOne \t isTwo: $isTwo \t isThree: $isThree // class MyRouterState";
   }
 
 }

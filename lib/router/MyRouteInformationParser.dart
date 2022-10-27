@@ -7,14 +7,14 @@ import 'package:navigator_2_async/router/MyRouterState.dart';
 class MyRouteInformationParser extends RouteInformationParser<MyRouterState> {
   @override
   Future<MyRouterState> parseRouteInformation (RouteInformation routeInformation) async {
-    print("Enter parseRouteInformation");
+    print("Enter parseRouteInformation // class MyRouteInformationParser");
     final uri = Uri.parse(routeInformation.location!);
     MyRouterState state = MyRouterState();
     print(uri.pathSegments);
     if (uri.pathSegments.isEmpty) {
-      print("Before http request");
+      print("Before http request // class MyRouteInformationParser");
       final response = await Dio().get<List<dynamic>>('https://jsonplaceholder.typicode.com/posts');
-      print("After http request");
+      print("After http request // class MyRouteInformationParser");
       if (response.data!.isNotEmpty) {
         state.isOne = false;
         state.isTwo = true;
@@ -25,7 +25,7 @@ class MyRouteInformationParser extends RouteInformationParser<MyRouterState> {
 
   @override
   RouteInformation? restoreRouteInformation(MyRouterState configuration) {
-    print("Enter restoreRouteInformation");
+    print("Enter restoreRouteInformation // class MyRouteInformationParser");
     print(configuration.toString());
     if (configuration.isThree) {
       return const RouteInformation(location: '/three');

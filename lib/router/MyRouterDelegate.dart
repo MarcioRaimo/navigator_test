@@ -33,7 +33,7 @@ class MyRouterDelegate extends RouterDelegate<MyRouterState>
   GlobalKey<NavigatorState> get navigatorKey => _navigatorKey;
 
   MyRouterDelegate() {
-    print("Construct RouterDelegate");
+    print("Construct RouterDelegate // class MyRouterDelegate");
     Variables.getIt<MyRouterState>().addListener(update);
   }
 
@@ -44,20 +44,20 @@ class MyRouterDelegate extends RouterDelegate<MyRouterState>
 
   @override
   MyRouterState? get currentConfiguration {
-    print("Enter getCurrentConfiguration");
+    print("Enter getCurrentConfiguration // class MyRouterDelegate");
     return state;
   }
 
   @override
   Future<void> setNewRoutePath(MyRouterState configuration) async {
-    print("Enter setNewRoutePath");
+    print("Enter setNewRoutePath // class MyRouterDelegate");
     print(configuration.toString());
     state.updateWithInstance(configuration);
   }
 
   @override
   Widget build(BuildContext context) {
-    print("Build RouterDelegate");
+    print("Build RouterDelegate // class MyRouterDelegate");
     List<Page> stack = [];
     if (state.isOne == true) {
       stack = oneStack;
